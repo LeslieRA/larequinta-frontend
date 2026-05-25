@@ -1,0 +1,91 @@
+.email-wrapper { width: 100%; position: relative; }
+
+.email-input-box {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid var(--cream-dk);
+  border-radius: var(--radius);
+  background: var(--white);
+  height: 42px;
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+
+.email-input-box:focus-within {
+  border-color: var(--rose);
+  box-shadow: 0 0 0 3px rgba(220,52,132,0.1);
+}
+
+.email-error {
+  border-color: var(--rose) !important;
+  box-shadow: 0 0 0 3px rgba(220,52,132,0.1) !important;
+}
+
+.email-ok {
+  border-color: var(--green) !important;
+  box-shadow: 0 0 0 3px rgba(44,148,52,0.1) !important;
+}
+
+.email-input {
+  flex: 1;
+  border: none !important;
+  outline: none !important;
+  padding: 0 12px;
+  font-size: 13.5px;
+  color: var(--text);
+  background: transparent;
+  font-family: var(--font-body);
+  height: 100%;
+  box-shadow: none !important;
+}
+
+.email-status {
+  padding-right: 12px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.email-error .email-status { color: var(--rose); }
+.email-ok    .email-status { color: var(--green); }
+
+.email-error-msg {
+  color: var(--rose-dk);
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.email-ok-msg {
+  color: var(--green);
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* ── Agregar al final de EmailInput.css ── */
+
+/* Borde azul/gris cuando el correo es nuevo (no existe en BD) */
+.email-input-box.email-new {
+  border-color: #a0aec0;
+}
+
+/* Spinner giratorio */
+.email-spinner {
+  animation: email-spin 0.75s linear infinite;
+  color: #de2989;
+  display: block;
+}
+@keyframes email-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Mensajes de feedback */
+.email-searching-msg {
+  font-size: 11.5px;
+  color: #9a7090;
+  margin-top: 4px;
+}
+.email-new-msg {
+  font-size: 11.5px;
+  color: #718096;
+  margin-top: 4px;
+}

@@ -1,0 +1,229 @@
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-field-full { grid-column: 1 / -1; }
+
+.form-field label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-soft);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  padding: 10px 14px;
+  border: 1.5px solid var(--cream-dk);
+  border-radius: var(--radius);
+  font-size: 13.5px;
+  color: var(--text);
+  background: var(--white);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.form-field input:hover,
+.form-field select:hover,
+.form-field textarea:hover {
+  border-color: rgba(220,52,132,0.3);
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: var(--rose);
+  box-shadow: 0 0 0 3px rgba(220,52,132,0.1);
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 88px;
+  line-height: 1.5;
+}
+
+.form-error {
+  grid-column: 1 / -1;
+  color: var(--rose-dk);
+  font-size: 13px;
+  background: var(--rose-lt);
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  border-left: 3px solid var(--rose);
+}
+
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--cream-dk);
+}
+
+.btn-cancel {
+  padding: 10px 22px;
+  border-radius: var(--radius);
+  font-size: 13.5px;
+  font-weight: 600;
+  border: 1.5px solid var(--cream-dk);
+  background: var(--white);
+  color: var(--text-soft);
+  transition: all 0.2s ease;
+}
+
+.btn-cancel:hover {
+  border-color: var(--rose-lt);
+  background: var(--rose-ultra);
+  color: var(--rose);
+}
+/* ── Select personalizado ─────────────────────────────── */
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a4a66' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px !important;
+  cursor: pointer;
+}
+
+select:focus {
+  border-color: var(--rose) !important;
+  box-shadow: 0 0 0 3px rgba(220,52,132,0.1) !important;
+}
+
+/* ── Tipos checkbox group ─────────────────────────────── */
+.tipos-check-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+  flex-wrap: wrap;
+}
+
+.tipo-check {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  border: 1.5px solid var(--cream-dk);
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--text-soft);
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.tipo-check input[type="checkbox"] {
+  display: none;
+}
+
+.tipo-check:hover {
+  border-color: rgba(220,52,132,0.3);
+  color: var(--text);
+}
+
+.tipo-check.checked {
+  border-color: var(--rose);
+  background: var(--rose-ultra);
+  color: var(--rose-dk);
+  font-weight: 600;
+}
+
+.form-field input.input-error,
+.form-field select.input-error {
+  border-color: var(--rose) !important;
+  box-shadow: 0 0 0 3px rgba(220,52,132,0.1) !important;
+}
+/* ── Botones de acción en modales ───────────────────────── */
+.form-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid #f0e8f0;
+  margin-top: 8px;
+  grid-column: 1 / -1;
+}
+
+.btn-primary {
+  height: 42px;
+  padding: 0 24px;
+  background: linear-gradient(135deg, #de2989, #c01870);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font-body);
+  box-shadow: 0 4px 12px rgba(222,41,137,0.3);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(222,41,137,0.4);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-cancel {
+  height: 42px;
+  padding: 0 20px;
+  background: white;
+  color: #7a4a66;
+  border: 1.5px solid #eddde8;
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-cancel:hover {
+  border-color: #de2989;
+  color: #de2989;
+  background: #fdf0f8;
+}
+
+.btn-danger {
+  height: 42px;
+  padding: 0 20px;
+  background: #fdecea;
+  color: #a82060;
+  border: 1.5px solid rgba(222,41,137,0.2);
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-danger:hover {
+  background: #de2989;
+  color: white;
+  border-color: #de2989;
+}

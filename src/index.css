@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* ── Paleta principal ── */
+  --rose:       #dc3484;
+  --rose-dk:    #a82060;
+  --rose-lt:    #fce8f3;
+  --rose-ultra: #fdf0f8;
+
+  /* ── Acentos ── */
+  --gold:       #f7a719;
+  --gold-dk:    #c47d00;
+  --gold-lt:    #fff8ec;
+
+  /* ── Paleta completa del logo ── */
+  --blue:       #3c5994;
+  --blue-lt:    #e8edf7;
+  --pink:       #e14e9e;
+  --teal:       #54bcc4;
+  --teal-lt:    #e8f8f9;
+  --green:      #2c9434;
+  --green-lt:   #e8f5e9;
+  --navy:       #14648c;
+  --gray-mid:   #646464;
+
+  /* ── Neutros ── */
+  --cream:      #fdf6f0;
+  --cream-dk:   #f5ece4;
+  --white:      #ffffff;
+  --black:      #1a0812;
+  --text:       #2d1428;
+  --text-soft:  #7a4a66;
+
+  /* ── Semánticos ── */
+  --success:    #2c9434;
+  --warning:    #f7a719;
+  --danger:     #dc3484;
+  --info:       #54bcc4;
+
+  /* ── Sidebar oscuro ── */
+  --sidebar-bg:     #1a0812;
+  --sidebar-hover:  rgba(220,52,132,0.15);
+  --sidebar-active: rgba(220,52,132,0.25);
+
+  /* ── UI ── */
+  --radius:     10px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+  --shadow-sm:  0 1px 4px rgba(26,8,18,0.08);
+  --shadow:     0 4px 16px rgba(26,8,18,0.10);
+  --shadow-lg:  0 8px 32px rgba(26,8,18,0.14);
+  --shadow-rose: 0 4px 20px rgba(220,52,132,0.20);
+
+  /* ── Tipografía ── */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'DM Sans', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+button  { cursor: pointer; font-family: var(--font-body); }
+input, select, textarea { font-family: var(--font-body); }
+
+/* ── Scrollbar elegante ── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--cream-dk); }
+::-webkit-scrollbar-thumb { background: var(--rose-lt); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--rose); }

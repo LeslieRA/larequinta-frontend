@@ -1,0 +1,98 @@
+.splash {
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.splash.entrada  { opacity: 0; }
+.splash.visible  { opacity: 1; }
+.splash.salida   { opacity: 0; pointer-events: none; }
+
+.splash-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  transform: translateY(0);
+  animation: splashFloat 2s ease-in-out infinite;
+}
+
+@keyframes splashFloat {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+.splash-logo-wrap {
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: splashPop 0.6s cubic-bezier(0.34,1.56,0.64,1) 0.2s both;
+}
+
+@keyframes splashPop {
+  from { transform: scale(0.3); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+
+.splash-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.splash-text {
+  text-align: center;
+  animation: splashFadeUp 0.6s ease 0.5s both;
+}
+
+@keyframes splashFadeUp {
+  from { transform: translateY(16px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.splash-nombre {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #2a0a1a;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.splash-sub {
+  font-size: 13px;
+  color: #b090a8;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 4px 0 0;
+}
+
+.splash-dots {
+  display: flex;
+  gap: 8px;
+  animation: splashFadeUp 0.6s ease 0.8s both;
+}
+
+.splash-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #de2989;
+  animation: splashDot 1.2s ease-in-out infinite;
+}
+
+.splash-dots span:nth-child(2) { animation-delay: 0.2s; background: #f9b71b; }
+.splash-dots span:nth-child(3) { animation-delay: 0.4s; background: #196792; }
+
+@keyframes splashDot {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+  40%           { transform: scale(1.2); opacity: 1;   }
+}
